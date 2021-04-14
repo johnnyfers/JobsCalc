@@ -65,6 +65,8 @@
 /* tags styling */
 body {
   background: var(--color-background);
+  overflow-x: hidden;
+  margin: auto;
 }
 
 body,
@@ -111,3 +113,4 @@ a {
 .flex {
   display: flex;
 }
+

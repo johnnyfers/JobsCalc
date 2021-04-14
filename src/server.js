@@ -18,4 +18,4 @@ server.use(express.urlencoded({ extended: true }))
 // routes
 server.use(routes)
 
-server.listen(5000, () => console.log('running on port 3000'))
+server.listen(5000, () => console.log('running on port 5000'))
