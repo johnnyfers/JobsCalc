@@ -1,6 +1,7 @@
 const fetch = require('node-fetch');
 const Profile = require('../model/Profile.js');
 
+
 const ProfileUtils = {
   async data() {
     const profileData = await Profile.get().then(res => {
@@ -21,5 +22,7 @@ const ProfileUtils = {
     return currentValue.toFixed(2);
   }
 }
+
+
 
 module.exports = ProfileUtils;

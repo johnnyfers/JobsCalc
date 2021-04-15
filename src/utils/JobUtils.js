@@ -1,5 +1,6 @@
 const fetch = require('node-fetch');
-const JobController = require('../controllers/JobController')
+const Profile = require('../model/Profile.js');
+const Job = require('../model/Job.js');
 
 const JobUtils = {
     remainingDays(job) {
@@ -19,26 +20,7 @@ const JobUtils = {
         return dayDiff
     },
     
-    calculateBudget: (job, valueHour) => valueHour * job['total-hours'],
-    
-    async data() {
-        const jobData = await JobController.show().then(res => {
-          return res[job.budget].toFixed(2);
-        }).then(data => {
-          return data;
-        })
-       
-        return jobData;
-    
-      },
-    async url() {
-        const response = await fetch(`https://economia.awesomeapi.com.br/USD-BRL/`);
-        const data = await response.json();
-    
-        let currentValue = await JobUtils.data() / data[0].high;
-    
-        return currentValue.toFixed(2);
-      }
+    calculateBudget: (job, valueHour) => valueHour * job['total-hours']
 
 }
 
