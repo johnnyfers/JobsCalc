@@ -1,4 +1,8 @@
-module.exports = {
+const fetch = require('node-fetch');
+const Profile = require('../model/Profile.js');
+const Job = require('../model/Job.js');
+
+const JobUtils = {
     remainingDays(job) {
         // cálculo de tempo restante
         const remainingDays = (job['total-hours'] / job['daily-hours']).toFixed()
@@ -15,5 +19,9 @@ module.exports = {
         // restam x dias
         return dayDiff
     },
+    
     calculateBudget: (job, valueHour) => valueHour * job['total-hours']
+
 }
+
+module.exports = JobUtils;

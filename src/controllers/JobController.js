@@ -1,10 +1,12 @@
 const Job= require('../model/Job');
 const JobUtils = require('../utils/JobUtils')
 const Profile = require('../model/Profile')
+const ProfileUtils = require('../utils/ProfileUtils')
+
 
 module.exports = {
     
-    create(req, res) {
+    async create(req, res) {
         return res.render('job')
     },
 
@@ -23,6 +25,8 @@ module.exports = {
     async show(req, res) {
         const jobs = await Job.get();
         const profile = await Profile.get();
+
+        const profileDolar = await ProfileUtils.url();
         
         const jobId = req.params.id;
 
@@ -34,7 +38,7 @@ module.exports = {
 
         job.budget = JobUtils.calculateBudget(job, profile['value-hour'])
 
-        return res.render('job-edit', { job })
+        return res.render('job-edit', { job, profileDolar })
     },
 
     async update(req, res) {

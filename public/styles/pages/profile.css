@@ -4,7 +4,7 @@
 
 aside.card {
   background: var(--color-card-background);
-  color: var(--color-card-title);
+  color: #595965;
 
   border: 1px solid #E1E3E6;
   border-radius: .313rem;
@@ -21,7 +21,7 @@ aside.card {
 aside img {
   border-radius: 50%;
 
-  border: .25rem var(--color-secondary) solid;
+  border: .25rem var(--color-border) solid;
 
   width: 11.25rem;
   height: 11.25rem;
